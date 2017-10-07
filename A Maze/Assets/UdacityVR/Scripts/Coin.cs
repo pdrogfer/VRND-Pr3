@@ -7,6 +7,12 @@ public class Coin : MonoBehaviour
     //Create a reference to the CoinPoofPrefab
 	public GameObject coinPoof;
 
+	void Update()
+	{
+		transform.Rotate (Vector3.right * Time.deltaTime * 80f);
+		transform.Rotate (Vector3.up * Time.deltaTime * 40f);
+	}
+
     public void OnCoinClicked() 
 	{
         // Instantiate the CoinPoof Prefab where this coin is located

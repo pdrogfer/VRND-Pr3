@@ -11,6 +11,8 @@ public class Key : MonoBehaviour
 	void Update()
 	{
 		//Not required, but for fun why not try adding a Key Floating Animation here :)
+		transform.Rotate (Vector3.up * Time.deltaTime * 80f);
+
 	}
 
 	public void OnKeyClicked()
