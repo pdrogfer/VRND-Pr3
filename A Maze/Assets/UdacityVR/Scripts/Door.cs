@@ -7,6 +7,8 @@ public class Door : MonoBehaviour
 	public AudioClip clickOnDoorLocked;
 	public AudioClip clickOnDoorUnlocked;
 
+	public float openingSpeed;
+
 	private AudioSource audioSource;
 
 	// Create a boolean value called "locked" that can be checked in OnDoorClicked()
@@ -27,10 +29,12 @@ public class Door : MonoBehaviour
     void Update() 
 	{
         // If the door is opening and it is not fully raised
-		if(opening)
+		if(opening && gameObject.transform.position.y < 10)
 		{
 			// Animate the door raising up (see treasure)
-		
+
+			float step = openingSpeed * Time.deltaTime;
+			gameObject.transform.Translate (Vector3.up * step);
 		}
             
     }
